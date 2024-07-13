@@ -44,3 +44,50 @@ Print the answer as a part of a message::
 to other fixed lines in Bangalore."
 The percentage should have 2 decimal digits
 """
+def char_in_str(text: str, char: str) -> bool:
+    if char in text:
+        return True
+
+def telemarketers(num:str) -> bool:
+    return num.startswith("140") and not char_in_str(num, " ") \
+           and not char_in_str(num, "(") and not char_in_str(num, ")")
+
+def mobile(num:str) -> bool:
+    if num.startswith("7") or num.startswith("8") or num.startswith("9") \
+        and not char_in_str(num, "(") and not char_in_str(num, ")") \
+        and not char_in_str(num, ' '):
+          return True
+
+def areaCode(num:str) -> bool:
+    if num.startswith("(0)"):
+        return True
+recivers = []
+# create a list of received of numbers called from people in Bangalore
+for num in calls:
+    if num[0].startswith("(080)"):
+        recivers.append(num[1])
+
+# make received list unique
+uniqueReceivers = set(recivers)
+numList = list(uniqueReceivers)
+results = []
+for num in numList:
+    if telemarketers(num) or mobile(num) or areaCode(num):
+        results.append(num)
+
+print("The numbers called by people in Bangalore have codes:")
+for num in results:
+    print(num)
+
+# Task B
+fromBangalore = []
+toBangalore = []
+for num in calls:
+    if num[0].startswith("(080)"):
+        fromBangalore.append(num)
+        if num[1].startswith("(080)"):
+            toBangalore.append(num)
+
+percent = round(len(toBangalore)/len(fromBangalore) * 100, 2)
+print( str(percent) + " percent of calls from fixed lines in Bangalore are calls \
+to other fixed lines in Bangalore.")

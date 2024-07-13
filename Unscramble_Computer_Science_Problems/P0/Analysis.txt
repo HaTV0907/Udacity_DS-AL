@@ -1,0 +1,5 @@
+Task 0: Worst-Case Big-O Notation is O(1)
+Task 1: Worst-Case Big-O Notation is O(n)
+Task 2: Worst-Case Big-O Notation is O(n^2)
+Task 3: Worst-Case Big-O Notation is O(n) for both path A & B
+Task 4: Worst-Case Big-O Notation is O(n)
