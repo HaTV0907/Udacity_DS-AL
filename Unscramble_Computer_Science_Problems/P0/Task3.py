@@ -44,40 +44,28 @@ Print the answer as a part of a message::
 to other fixed lines in Bangalore."
 The percentage should have 2 decimal digits
 """
-def char_in_str(text: str, char: str) -> bool:
-    if char in text:
-        return True
 
-def telemarketers(num:str) -> bool:
-    return num.startswith("140") and not char_in_str(num, " ") \
-           and not char_in_str(num, "(") and not char_in_str(num, ")")
-
-def mobile(num:str) -> bool:
-    if num.startswith("7") or num.startswith("8") or num.startswith("9") \
-        and not char_in_str(num, "(") and not char_in_str(num, ")") \
-        and not char_in_str(num, ' '):
-          return True
-
-def areaCode(num:str) -> bool:
-    if num.startswith("(0)"):
-        return True
-recivers = []
-# create a list of received of numbers called from people in Bangalore
-for num in calls:
-    if num[0].startswith("(080)"):
-        recivers.append(num[1])
-
-# make received list unique
-uniqueReceivers = set(recivers)
-numList = list(uniqueReceivers)
-results = []
-for num in numList:
-    if telemarketers(num) or mobile(num) or areaCode(num):
-        results.append(num)
-
+areaCodes = []
+for call in calls:
+    areaCode = None
+    # check whether caller is having Bangalore fixed line no. or not.
+    if call[0].startswith("(080)"):
+        # if call[1] is fixed line no, fetch area code else
+        if call[1].startswith("(0"): # check "(0" instead of "(0)" - func areaCode()
+            areaCode = call[1][0:call[1].find(')')+1]
+        # if call[1] is mobile number, fetch area code else
+        if call[1].startswith(('7', '8', '9')):
+            areaCode = call[1][0:4]
+        # if call[1] is telemarketer number, fetch the area code
+        if call[1].startswith("140"):
+            areaCode = "140"
+    if None != areaCode:
+        areaCodes.append(areaCode)
+#sort the resultant list/set and display.
+areaCodes = list(set(areaCodes))
 print("The numbers called by people in Bangalore have codes:")
-for num in results:
-    print(num)
+for code in sorted(areaCodes):
+    print(code)
 
 # Task B
 fromBangalore = []

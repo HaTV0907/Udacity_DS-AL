@@ -33,28 +33,17 @@ Task 2: Worst-Case Big-O Notation is O(n^2)
         which gives us a time complexity of O(n^2).
 
 Task 3: Worst-Case Big-O Notation is O(n)
-        + Reading the 'calls.csv' file: The code opens the 'calls.csv' file and reads its contents using the csv.reader() function.
-        It then iterates over each entry in the file, which takes O(n) time, where n is the number of entries in the 'calls.csv' file.
-        + Creating a list of receivers: The code creates a list called 'receivers' to store the numbers called from people in Bangalore.
-        It iterates over each entry in the 'calls.csv' file and checks if the number starts with "(080)". The time complexity of this operation is O(n),
-        where n is the number of entries in the 'calls.csv' file.
-        + Creating a set of unique receivers: The code creates a set called 'uniqueReceivers' from the 'receivers' list.
-        Since it iterates over all the numbers in the 'receivers' list, the time complexity of this operation is O(n),
-        where n is the number of unique receivers.
-        + Finding the area codes, mobile prefixes, and telemarketers: The code iterates over the unique receivers
-        and checks if each number matches the criteria for area codes, mobile prefixes, or telemarketers.
-        The time complexity of this operation is O(n), where n is the number of unique receivers.
-        + Printing the numbers with codes: The code prints each number with its code.
-        Since it prints all the numbers once, the time complexity of this operation is O(n),
-        where n is the number of numbers with codes.
-        + Finding the percentage of calls to other fixed lines in Bangalore: The code iterates over the 'calls' list
-        and checks if each call is from a number starting with "(080)".
-        It also checks if the receiver of the call is also a number starting with "(080)".
-        The time complexity of this operation is O(n), where n is the number of entries in the 'calls.csv' file.
-        + Printing the percentage: The code prints the percentage of calls to other fixed lines in Bangalore.
-        Since it performs a single operation to calculate the percentage, the time complexity of this operation is O(1).
-        => Overall, the time complexity of the code is dominated by the operations that iterate over the entries in the 'calls.csv' file,
-        which gives us a time complexity of O(n).
+        + Part 1: Finding area codes In this part, the code iterates through each call in the 'calls' list
+        and checks various conditions to determine the area code. It then appends the area code to the 'areaCodes' list.
+        + The time complexity of this part is O(n), where n is the number of calls in the 'calls' list.
+        This is because the code iterates through each call exactly once.
+        + Part 2: Finding the percentage of calls from fixed lines in Bangalore to other fixed lines in Bangalore.
+        In this part, the code iterates through each number in the 'calls' list and checks whether it starts with "(080)" to identify calls
+        from fixed lines in Bangalore. It then appends the numbers to the 'fromBangalore' list.
+        Additionally, if the number also starts with "(080)", it appends it to the 'toBangalore' list.
+        + The time complexity of this part is also O(n), where n is the number of calls in the 'calls' list.
+        This is because the code iterates through each number exactly once.
+        => Overall, the time complexity of the given code is O(n), where n is the number of calls in the 'calls' list.
 
 Task 4: Worst-Case Big-O Notation is O(n)
         + Reading the 'texts.csv' file: The code opens the 'texts.csv' file and reads its contents using the csv.reader() function.
@@ -71,7 +60,7 @@ Task 4: Worst-Case Big-O Notation is O(n)
         and checks if each number is a telemarketer using the telemarketers() function.
         If it is a telemarketer, the number is appended to the teleNums list. Since it iterates over all the numbers once,
         the time complexity of this operation is O(n), where n is the number of unique numbers in the callNums list.
-        + Printing the telemarketer numbers: The code prints each number in the teleNums list.
+        + Printing the telemarketer numbers: The code prints each number in the sorted teleNums list.
         Since it prints all the numbers once, the time complexity of this operation is O(n), where n is the number of telemarketer numbers.
         => Overall, the time complexity of the code is dominated by the operations that iterate over the entries in the 'texts.csv' and 'calls.csv' files,
         which gives us a time complexity of O(n).

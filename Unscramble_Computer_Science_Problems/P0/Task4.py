@@ -48,5 +48,5 @@ for num in callNums:
         teleNums.append(num)
 
 print("These numbers could be telemarketers: ")
-for num in teleNums:
+for num in sorted(teleNums):
     print(num)
