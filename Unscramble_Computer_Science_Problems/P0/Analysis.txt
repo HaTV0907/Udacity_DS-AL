@@ -32,11 +32,11 @@ Task 2: Worst-Case Big-O Notation is O(n^2)
         => Overall, the time complexity of the code is dominated by the operations that iterate over the entries unique_nums and calls,
         which gives us a time complexity of O(n^2).
 
-Task 3: Worst-Case Big-O Notation is O(n)
+Task 3: Worst-Case Big-O Notation is:
         + Part 1: Finding area codes In this part, the code iterates through each call in the 'calls' list
         and checks various conditions to determine the area code. It then appends the area code to the 'areaCodes' list.
-        + The time complexity of this part is O(n), where n is the number of calls in the 'calls' list.
-        This is because the code iterates through each call exactly once.
+        + The time complexity of this part is O(n log n), where n is the number of calls in the 'calls' list.
+        This is because the code iterates through each areaCode exactly once in sorted list of areaCodes
         + Part 2: Finding the percentage of calls from fixed lines in Bangalore to other fixed lines in Bangalore.
         In this part, the code iterates through each number in the 'calls' list and checks whether it starts with "(080)" to identify calls
         from fixed lines in Bangalore. It then appends the numbers to the 'fromBangalore' list.
@@ -45,7 +45,7 @@ Task 3: Worst-Case Big-O Notation is O(n)
         This is because the code iterates through each number exactly once.
         => Overall, the time complexity of the given code is O(n), where n is the number of calls in the 'calls' list.
 
-Task 4: Worst-Case Big-O Notation is O(n)
+Task 4: Worst-Case Big-O Notation is O(n log n)
         + Reading the 'texts.csv' file: The code opens the 'texts.csv' file and reads its contents using the csv.reader() function.
         Since it reads all the entries in the file, the time complexity of this operation is O(n), where n is the number of entries in the 'texts.csv' file.
         + Reading the 'calls.csv' file: Similar to reading the 'texts.csv' file, the code opens the 'calls.csv' file and reads its contents
@@ -61,6 +61,6 @@ Task 4: Worst-Case Big-O Notation is O(n)
         If it is a telemarketer, the number is appended to the teleNums list. Since it iterates over all the numbers once,
         the time complexity of this operation is O(n), where n is the number of unique numbers in the callNums list.
         + Printing the telemarketer numbers: The code prints each number in the sorted teleNums list.
-        Since it prints all the numbers once, the time complexity of this operation is O(n), where n is the number of telemarketer numbers.
-        => Overall, the time complexity of the code is dominated by the operations that iterate over the entries in the 'texts.csv' and 'calls.csv' files,
-        which gives us a time complexity of O(n).
+        Since it prints all the numbers once, the time complexity of this operation is O(n log n), where n is the number of telemarketer numbers.
+        => Overall, the time complexity of the code is dominated by the operations that iterate over the sorted teleNums list,
+        which gives us a time complexity of O(n log n).
