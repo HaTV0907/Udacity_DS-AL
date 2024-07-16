@@ -1,0 +1,8 @@
+In this code, the find_files function takes a directory path and an extension as input.
+It uses os.listdir to get a list of all files and directories in the given directory. For each item in the list,
+it checks if it is a file and if the filename ends with the specified extension.
+If it does, the file path is appended to the files list. If the item is a directory,
+the function recursively calls itself with the subdirectory as the new directory parameter.
+
+By using this recursive approach, we can traverse through all directories and subdirectories to find files with the desired extension.
+
