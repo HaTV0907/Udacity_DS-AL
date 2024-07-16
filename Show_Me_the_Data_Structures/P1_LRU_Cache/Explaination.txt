@@ -1,0 +1,12 @@
+In this implementation, the LRUCache class maintains a doubly linked list to keep track of the order of the most recently used items.
+The cache dictionary is used to store the key-value pairs,
+with the keys mapping to the corresponding nodes in the linked list.
+
+The _add_node method adds a node right after the head, while the _remove_node method removes a node from the linked list.
+The _move_to_head method moves a node to the head (most recently used position),
+and the _pop_tail method removes the tail node (least recently used).
+
+The get method retrieves the value associated with a given key from the cache.
+If the key is present, it moves the corresponding node to the head to mark it as the most recently used item.
+The set method inserts or updates a key-value pair in the cache. If the cache exceeds its capacity,
+it removes the least recently used item by popping the tail node from the linked list and deleting it from the cache.
