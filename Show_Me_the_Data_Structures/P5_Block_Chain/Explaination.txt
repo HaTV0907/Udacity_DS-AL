@@ -8,3 +8,22 @@ The add_block method adds a new block to the chain by creating a new Block objec
 The print_blocks method to the Blockchain class. This method iterates through each block in the chain
 and prints its timestamp, data, previous hash, and hash.
 After adding the blocks to the blockchain, you can call the print_blocks method to display the results.
+
+Time Complexity:
+
+Adding a Block: The add_block method iterates through the linked list to find the last block and then adds a new block at the end
+The time complexity of this operation is O(n), where n is the number of blocks in the blockchain.
+
+Printing Blocks: The print_blocks method iterates through the linked list and prints the details of each block.
+The time complexity of this operation is also O(n), where n is the number of blocks in the blockchain.
+
+Calculating Hash: The calc_hash method calculates the SHA-256 hash of the block's data, timestamp, and previous hash.
+The time complexity of this operation is O(1) since the size of the input to the hash function is constant.
+
+Space Complexity:
+
+Block Storage: The space complexity of the blockchain depends on the number of blocks stored.
+Each block contains timestamp, data, previous hash, and hash. The space complexity is O(n), where n is the number of blocks in the blockchain.
+
+Overall, the time complexity of adding a block or printing blocks is linear with respect to the number of blocks in the blockchain.
+The space complexity is also linear with respect to the number of blocks.

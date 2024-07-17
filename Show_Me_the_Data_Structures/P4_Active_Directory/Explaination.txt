@@ -9,3 +9,29 @@ If the user is not directly in the group, the function recursively calls itself 
 This allows us to traverse the group hierarchy and check if the user is in any of the subgroups.
 
 Finally, if the user is not found in the group or any subgroups, the function returns False.
+
+Time Complexity:
+
+Adding a Group/User: The add_group and add_user methods have a time complexity of O(1) since they simply append the group or user to the respective lists.
+
+Getting Groups/Users/Name: The get_groups, get_users, and get_name methods also have a time complexity of O(1)
+since they directly return the respective lists or name.
+
+is_user_in_group: The time complexity of the is_user_in_group function depends on the number of groups and users in the hierarchy.
+In the worst case, if the user is not found in the group or any subgroups, the function will recursively check all the groups and users in the hierarchy.
+Therefore, the time complexity can be expressed as O(n), where n is the total number of groups and users in the hierarchy.
+
+Space Complexity:
+
+Group Storage: The space complexity of storing groups depends on the number of groups created.
+Each Group object contains a list of subgroups. The space complexity is O(g), where g is the total number of groups in the hierarchy.
+
+User Storage: The space complexity of storing users depends on the number of users added.
+Each Group object contains a list of users. The space complexity is O(u), where u is the total number of users in the hierarchy.
+
+Recursive Call Stack: The space complexity of the recursive is_user_in_group function depends on the depth of the group hierarchy.
+In the worst case, if the user is not found in any group or subgroups, the recursive call stack can grow to the depth of the hierarchy.
+Therefore, the space complexity can be expressed as O(d), where d is the depth of the group hierarchy.
+
+Overall, the time complexity of most operations in the code is constant or linear with respect to the number of groups and users.
+The space complexity is also linear with respect to the number of groups and users, as well as the depth of the group hierarchy.

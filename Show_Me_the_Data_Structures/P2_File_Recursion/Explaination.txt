@@ -6,3 +6,29 @@ the function recursively calls itself with the subdirectory as the new directory
 
 By using this recursive approach, we can traverse through all directories and subdirectories to find files with the desired extension.
 
+Time Complexity: The time complexity of the find_files function depends on the number of files and directories in the directory tree.
+Let's denote the number of files as f and the number of directories as d.
+
+In the worst case, the function will traverse all files and directories in the directory tree.
+For each file or directory encountered, the function performs constant time operations to check
+if it matches the desired extension and appends it to the files list if it does.
+
+Therefore, the time complexity of the find_files function can be expressed as O(f + d),
+where f is the number of files and d is the number of directories.
+
+Space Complexity: The space complexity of the find_files function depends on the depth of the directory tree and the number of files found.
+Let's denote the maximum depth of the directory tree as m.
+
+In the worst case, if the directory tree is deeply nested and contains a large number of files, the function will recursively call itself m times.
+Each recursive call creates a new stack frame, which consumes additional space.
+
+Additionally, the files list stores the paths of the files found.
+The space complexity of the files list is proportional to the number of files found, denoted as f.
+
+Therefore, the space complexity of the find_files function can be expressed as O(f + m).
+
+It's important to note that the time and space complexity can vary depending on the size and structure of the directory tree,
+as well as the number of files and directories matching the desired extension.
+
+Overall, the time complexity is linear with respect to the number of files and directories,
+and the space complexity is linear with respect to the number of files found and the maximum depth of the directory tree.

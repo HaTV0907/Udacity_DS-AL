@@ -5,3 +5,33 @@ Next, we traverse the second linked list (llist_2) and add its elements to the u
 In the intersection function, we create a new linked list called intersection_list to store the intersection of the two linked lists.
 We traverse the first linked list (llist_1) and check if each element is present in the second linked list (llist_2).
 If it is, we add it to the intersection_list.
+
+The time and space efficiency of the code depends on the size of the input linked lists,
+denoted as n and m, where n is the size of the first linked list and m is the size of the second linked list.
+
+For the union function:
+
+Time Complexity: The time complexity of the union function is O(n + m).
+This is because we traverse both linked lists once to add their elements to the union_list.
+The time complexity of traversing a linked list is O(n) where n is the size of the linked list.
+Therefore, the overall time complexity is O(n + m).
+
+Space Complexity: The space complexity of the union function is O(n + m).
+This is because we create a new linked list union_list to store the union of the two linked lists.
+The space complexity of creating a new linked list is proportional to the number of elements in the union, which is at most n + m.
+
+For the intersection function:
+
+Time Complexity: The time complexity of the intersection function is O(n * m).
+This is because for each element in the first linked list, we check if it is present in the second linked list using the contains method.
+The contains method has a time complexity of O(m) where m is the size of the second linked list.
+Therefore, for each element in the first linked list, we perform O(m) operations.
+Since there are n elements in the first linked list, the overall time complexity is O(n * m).
+
+Space Complexity: The space complexity of the intersection function is O(min(n, m)).
+This is because we create a new linked list intersection_list to store the intersection of the two linked lists.
+The space complexity is proportional to the number of elements in the intersection, which is at most the size of the smaller linked list (n or m).
+
+It's important to note that these time and space complexities assume that the contains method in the LinkedList class has a time complexity of O(n),
+where n is the size of the linked list.
+If the contains method has a different time complexity, the overall time complexity of the intersection function may change accordingly.

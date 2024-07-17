@@ -10,3 +10,27 @@ The get method retrieves the value associated with a given key from the cache.
 If the key is present, it moves the corresponding node to the head to mark it as the most recently used item.
 The set method inserts or updates a key-value pair in the cache. If the cache exceeds its capacity,
 it removes the least recently used item by popping the tail node from the linked list and deleting it from the cache.
+
+Time Complexity:
+
+Get Operation: The time complexity of the get method is O(1) since it involves a dictionary lookup to check if the key exists in the cache.
+Additionally, it calls the _move_to_head method, which performs constant-time operations to move the accessed node to the head of the linked list.
+
+Set Operation: The time complexity of the set method is also O(1) in the average case.
+It involves dictionary lookups, node updates, and adding a new node to the linked list.
+All of these operations are constant time.
+However, in the worst case, when the cache reaches its capacity and we need to remove the least recently used node,
+the _pop_tail method is called, which has a time complexity of O(1).
+
+Space Complexity:
+
+Cache Storage: The space complexity of the cache storage is O(capacity),
+where capacity is the maximum number of elements the cache can hold.
+This is because the cache is implemented using a dictionary, and the number of elements stored in the dictionary is limited by the capacity.
+
+Linked List Storage: The space complexity of the linked list storage is O(capacity).
+The linked list is used to maintain the order of recently used nodes.
+It consists of Node objects, and the number of nodes is limited by the capacity of the cache.
+
+Overall, the time complexity of the LRUCache operations is O(1), and the space complexity is O(capacity).
+The code efficiently maintains the order of recently used elements using a combination of a doubly linked list and a dictionary.
