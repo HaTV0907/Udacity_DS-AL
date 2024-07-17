@@ -1,0 +1,11 @@
+In this implementation, the is_user_in_group function takes two arguments:
+    + the user (which is a string representing the user's ID)
+    + the group (which is an instance of the Group class).
+
+The function first checks if the user is directly in the current group by using the get_users method of the Group class.
+If the user is found, it returns True.
+
+If the user is not directly in the group, the function recursively calls itself for each subgroup of the current group.
+This allows us to traverse the group hierarchy and check if the user is in any of the subgroups.
+
+Finally, if the user is not found in the group or any subgroups, the function returns False.
