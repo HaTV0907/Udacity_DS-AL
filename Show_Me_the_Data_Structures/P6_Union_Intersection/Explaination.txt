@@ -1,0 +1,7 @@
+In the union function, we create a new linked list called union_list to store the union of the two linked lists.
+We then traverse the first linked list (llist_1) and add its elements to the union_list.
+Next, we traverse the second linked list (llist_2) and add its elements to the union_list only if they are not already present in the union_list
+
+In the intersection function, we create a new linked list called intersection_list to store the intersection of the two linked lists.
+We traverse the first linked list (llist_1) and check if each element is present in the second linked list (llist_2).
+If it is, we add it to the intersection_list.
