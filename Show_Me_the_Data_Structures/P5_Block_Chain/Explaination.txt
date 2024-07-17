@@ -1,0 +1,10 @@
+In the Block class, we initialize the block with a timestamp, data, and the hash of the previous block.
+The calc_hash method calculates the hash of the block by concatenating the timestamp, data, and previous hash,
+and then calculating the SHA-256 hash.
+
+In the Blockchain class, we have a head attribute that points to the first block in the chain.
+The add_block method adds a new block to the chain by creating a new Block object and updating the head pointer.
+
+The print_blocks method to the Blockchain class. This method iterates through each block in the chain
+and prints its timestamp, data, previous hash, and hash.
+After adding the blocks to the blockchain, you can call the print_blocks method to display the results.
