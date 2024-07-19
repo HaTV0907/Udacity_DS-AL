@@ -1,0 +1,50 @@
+In this implementation, we first build a frequency table to store the frequency of each character in the input data.
+Then, we use a priority queue (heap) to build the Huffman tree based on the frequencies.
+After that, we build an encoding table to map each character to its corresponding Huffman code.
+Finally, we encode the data using the encoding table and decode it using the Huffman tree.
+
+We use a heap (specifically, a min-heap) to build the Huffman tree because it allows us to efficiently retrieve the nodes
+with the lowest frequency during the construction process.
+
+The Huffman coding algorithm involves repeatedly selecting the two nodes with the lowest frequencyand merging them into a new node.
+This process continues until we have a single root node, which represents the complete Huffman tree.
+
+By using a min-heap, we can ensure that the node with the lowest frequency is always at the top of the heap,
+making it easy to extract and merge the two lowest frequency nodes efficiently.
+The heap automatically maintains the order of the nodes based on their frequencies, allowing us to access the lowest frequency nodes in constant time.
+
+Using a heap for this purpose is more efficient than sorting the nodes after each merge operation, which would require a higher time complexity.
+The heap provides a convenient way to keep track of the lowest frequency nodes
+and ensures that the construction of the Huffman tree can be done in an optimal manner.
+
+build_frequency_table function:
+
+Time complexity: O(n), where n is the length of the input data. This is because we iterate through each character in the data to build the frequency table.
+Space complexity: O(k), where k is the number of unique characters in the data. This is because we store the frequency of each character in a dictionary.
+
+build_huffman_tree function:
+
+Time complexity: O(n log n), where n is the number of unique characters in the data. This is because we use a heap to build the Huffman tree,
+and each insertion and extraction operation on the heap takes O(log n) time. Since we have n unique characters, the total time complexity is O(n log n).
+Space complexity: O(n), where n is the number of unique characters in the data. This is because we store the nodes of the Huffman tree in a heap,
+which requires O(n) space.
+
+build_encoding_table function:
+
+Time complexity: O(n), where n is the number of nodes in the Huffman tree.
+In the worst case, we need to traverse all the nodes in the tree to build the encoding table.
+Space complexity: O(n), where n is the number of nodes in the Huffman tree.
+This is because we store the encoding for each character in a dictionary, and in the worst case, we have n unique characters in the tree.
+
+huffman_encoding function:
+
+Time complexity: O(n log n), where n is the number of unique characters in the data.
+This is because we call build_frequency_table, build_huffman_tree, and build_encoding_table, each of which has a time complexity of O(n log n).
+Space complexity: O(n), where n is the number of unique characters in the data.
+This is because we store the Huffman tree and the encoding table, each of which requires O(n) space.
+
+huffman_decoding function:
+
+Time complexity: O(m), where m is the length of the encoded data.
+This is because we traverse the Huffman tree based on the bits in the encoded data, and in the worst case, we need to traverse all the bits.
+Space complexity: O(1). The space used for decoding is constant, as we only need a few variables to keep track of the current node and the decoded data.
