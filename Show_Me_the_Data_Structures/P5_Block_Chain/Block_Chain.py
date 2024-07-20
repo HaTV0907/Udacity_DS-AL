@@ -44,5 +44,7 @@ blockchain = Blockchain()
 blockchain.add_block("Head Block")
 blockchain.add_block("Second Block")
 blockchain.add_block("Third Block")
+blockchain.add_block("")
 blockchain.add_block("Hello, I am Ha. I am from Vietnam")
 blockchain.print_blocks()
+# timestamp is the time a block created. It's unique so there can not be two different block with same timestamp
