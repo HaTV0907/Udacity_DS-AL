@@ -40,7 +40,9 @@ class LRUCache:
         self._remove_node(tail)
         return tail
 
-    def get(self, key):
+    def get(self, key = None):
+        if None == key:
+            return -1
         if key in self.cache:
             node = self.cache[key]
             self._move_to_head(node)
@@ -48,6 +50,8 @@ class LRUCache:
         return -1
 
     def set(self, key, value):
+        if None == key or None == value:
+            return -1
         if key in self.cache:
             node = self.cache[key]
             node.value = value
@@ -67,6 +71,9 @@ our_cache.set(1, 1);
 our_cache.set(2, 2);
 our_cache.set(3, 3);
 our_cache.set(4, 4);
+our_cache.set(None, 1)
+our_cache.set(7, None)
+our_cache.set(None, None)
 
 
 our_cache.get(1)       # returns 1
@@ -78,3 +85,10 @@ our_cache.set(6, 6)
 
 our_cache.get(3)      # returns -1 because the cache reached it's capacity and 3 was the least recently used entry
 
+# repeatly get same value
+for i in range(100):
+    our_cache.get(4) # return 4
+
+# get invalid value
+our_cache.get()       # return -1
+our_cache.get("")       # return -1
