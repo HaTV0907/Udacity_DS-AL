@@ -1,0 +1,23 @@
+get_floor_value(number):
+
+This function uses math.floor(), which operates in constant time, (O(1)).
+It simply computes the floor of a given number without any loops or recursive calls.
+
+square_root(numbers):
+The first part of this function checks if the input numbers is negative. This check is also (O(1)) since it's a simple comparison.
+The next part calls np.sqrt(numbers). The time complexity of the numpy square root function is (O(1)) for a single number
+because it performs a direct computation. However, if numbers is an array (which is often the case with numpy),
+the time complexity would be (O(n)), where (n) is the number of elements in the array,
+since it computes the square root for each element in the array.
+
+Finally, get_floor_value() is called, which is (O(1)).
+
+Overall Time Complexity
+
+If numbers is a single integer or float, the overall time complexity of square_root(numbers) would be:
+
+(O(1) + O(1) + O(1) = O(1))
+
+If numbers is a numpy array, the overall time complexity would be:
+
+(O(1) + O(1) + O(n) = O(n))
