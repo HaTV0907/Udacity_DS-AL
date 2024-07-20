@@ -20,6 +20,8 @@ class Group(object):
         return self.name
 
 def is_user_in_group(user, group):
+    if None == user or None == group:
+        return False
     # Base case: check if the user is directly in the group
     if user in group.get_users():
         return True
@@ -76,3 +78,7 @@ print(is_user_in_group("user1", parent))  # Expected output: True
 
 # Edge case where the input is null
 print(is_user_in_group(None, None))  # Expected output: False or an appropriate error message
+# Edge case: user not found in any group
+print(is_user_in_group("user2", parent))  # Expected output: False or an appropriate error message
+# Edge case: user empty
+print(is_user_in_group("", parent))  # Expected output: False or an appropriate error message
