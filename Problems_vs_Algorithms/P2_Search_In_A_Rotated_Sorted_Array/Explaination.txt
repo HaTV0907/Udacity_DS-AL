@@ -1,0 +1,19 @@
+Time Complexity
+The time complexity of the rotated_array_search function is O(log n). Here's why:
+
+Binary Search: The algorithm uses a binary search approach, which divides the search space in half with each iteration.
+This is characteristic of logarithmic time complexity.
+While Loop: The loop continues as long as left is less than or equal to right.
+In each iteration, we effectively eliminate half of the remaining elements from consideration.
+Since the number of iterations is proportional to the logarithm of the number of elements in the array, the overall time complexity is O(log n).
+
+Space Complexity
+The space complexity of this function is O(1). Here's the reasoning:
+
+In-Place Search: The algorithm does not use any additional data structures that grow with the input size.
+It only uses a few variables (left, right, and mid) to keep track of indices.
+No Recursion: The function is iterative, meaning it does not use the call stack for recursion, which would otherwise add to the space complexity.
+
+Summary
+Time Complexity: O(log n)
+Space Complexity: O(1)
