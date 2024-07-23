@@ -1,0 +1,24 @@
+Time Complexity of merge_sort
+Divide Step: The array is divided into two halves at each level of recursion.
+This division continues until we reach arrays of size 1.
+The depth of the recursion tree is O(log n) because we keep halving the array.
+
+Conquer Step: Merging two sorted halves takes linear time, O(n), where n is the number of elements being merged.
+Putting these two steps together, the overall time complexity of merge sort is:
+Total Time Complexity: (O(n log n))
+
+Space Complexity of merge_sort
+Merge sort requires additional space for the temporary arrays used during the merging process. Therefore, the space complexity is:
+Space Complexity: (O(n))
+
+Time Complexity of get_min_max
+Sorting the Array: The get_min_max function calls merge_sort, which has a time complexity of (O(n log n)).
+Finding Min and Max: After sorting, it retrieves the minimum and maximum values from the sorted array,
+which is (O(1)) since it accesses the first and last elements of the sorted array.
+Putting this together, the overall time complexity of get_min_max is:
+Total Time Complexity: (O(n log n))
+
+Summary
+merge_sort Time Complexity: (O(n log n))
+get_min_max Time Complexity: (O(n log n))
+Space Complexity of merge_sort: (O(n))
