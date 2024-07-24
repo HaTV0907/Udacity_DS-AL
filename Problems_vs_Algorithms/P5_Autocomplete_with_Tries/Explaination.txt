@@ -1,0 +1,36 @@
+Define the TrieNode class:
+This will represent each node in the Trie.
+
+Define the Trie class:
+This will contain methods to insert words and find autocomplete suggestions.
+
+Insert Method: This method adds a word to the Trie. It creates new nodes as necessary for each character in the word.
+
+Autocomplete Method: This method finds all words that start with a given prefix.
+It first locates the node corresponding to the prefix and then recursively collects all valid words from that node.
+
+Time Complexity Analysis
+Insert Operation:
+
+Time Complexity: O(m), where m is the length of the word being inserted.
+Explanation: Inserting a word involves traversing each character of the word.
+For each character, we check if it exists in the current node's children and potentially create a new node if it doesn't.
+This process is linear with respect to the length of the word.
+
+Autocomplete Operation:
+Time Complexity: O(m + n), where m is the length of the prefix and n is the number of words that match the prefix.
+Explanation:
+First, we find the node corresponding to the prefix, which takes O(m) time.
+Then, we collect all the words that start with that prefix. The time taken to collect these words depends on how many words match the prefix,
+which is O(n) in the worst case.
+
+Space Complexity:
+Space Complexity: O(k * m), where k is the number of words inserted into the Trie and m is the average length of the words.
+Explanation: Each word can contribute to the creation of new nodes in the Trie.
+In the worst case, if all words are unique and share no common prefixes,
+the space used will be proportional to the total number of characters in all words.
+
+Summary
+Insert: O(m)
+Autocomplete: O(m + n)
+Space: O(k * m)

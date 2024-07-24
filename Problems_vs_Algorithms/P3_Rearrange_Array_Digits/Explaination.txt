@@ -1,0 +1,31 @@
+Time Complexity
+Merge Sort:
+
+The merge sort algorithm divides the array into two halves recursively.
+This division takes O(log n) time, where n is the number of elements in the array.
+Merging two halves takes linear time, O(n), because we have to go through all elements to merge them back together.
+Therefore, the overall time complexity of merge sort is: [ O(n log n) ]
+
+Rearrange Digits:
+
+The rearrange_digits function first calls merge_sort, which takes O(n log n).
+Then, it iterates through the sorted list to create two numbers, which takes linear time O(n).
+Thus, the overall time complexity of rearrange_digits is: [ O(n log n) + O(n) = O(n log n) ]
+
+Space Complexity
+
+Merge Sort:
+
+Merge sort requires additional space for the temporary arrays used during the merging process.
+In the worst case, it requires O(n) space for the left and right halves.
+Therefore, the space complexity of merge sort is: [ O(n) ]
+
+Rearrange Digits:
+
+The rearrange_digits function does not use any additional space beyond what is required for
+the input list and the temporary variables for the two numbers.
+Thus, the overall space complexity of rearrange_digits is: [ O(n) ]
+
+Summary
+Time Complexity: (O(n log n))
+Space Complexity: (O(n))

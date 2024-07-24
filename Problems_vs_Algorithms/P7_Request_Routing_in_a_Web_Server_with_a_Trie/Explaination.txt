@@ -1,0 +1,15 @@
+Time Complexity
+Insertion: When we insert a new route into the Trie, we traverse each character of the URL path.
+If the length of the URL is ( n ), the time complexity for insertion is ( O(n) ).
+
+Finding a Route: Similarly, when we search for a route in the Trie, we also traverse each character of the URL path.
+Thus, the time complexity for finding a route is also ( O(n) ).
+
+Space Complexity
+Storage of Nodes: The space complexity of a Trie is dependent on the number of nodes it contains.
+Each node represents a character in the URL path.
+If we have ( m ) routes and the average length of the routes is ( n ), the space complexity can be approximated as ( O(m * n) ).
+
+Node Structure: Each node in the Trie also stores references to its children and potentially a handler.
+This adds to the space used, but it is generally efficient compared to other data structures like hash tables,
+especially when dealing with hierarchical data like URLs.

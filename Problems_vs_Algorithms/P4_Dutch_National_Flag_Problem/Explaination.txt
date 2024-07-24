@@ -1,0 +1,23 @@
+Time Complexity
+The time complexity of the sort_012 function is (O(n)), where (n) is the number of elements in the input_list. Here's the breakdown:
+
+Single Traversal: The while loop iterates through the list with the mid pointer.
+Each element is processed exactly once, either by moving the mid pointer forward or by swapping elements.
+
+Constant Time Operations: Each operation inside the loop (checking the value, swapping elements, and incrementing pointers) takes constant time, (O(1)).
+
+Since we only traverse the list once and perform constant time operations, the overall time complexity is (O(n)).
+
+Space Complexity
+The space complexity of the sort_012 function is (O(1)). Here's why:
+
+In-Place Sorting: The algorithm sorts the list in place,
+meaning that it does not require any additional data structures that grow with the size of the input.
+The only extra space used is for a few integer variables (low, mid, high), which do not depend on the size of the input list.
+
+No Additional Arrays: Since you are not creating any new arrays or lists to hold the sorted values,
+the space used remains constant regardless of the input size.
+
+Summary
+Time Complexity: (O(n))
+Space Complexity: (O(1))
